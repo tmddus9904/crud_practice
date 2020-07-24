@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br> <br> <br>
+<h1>{{onepost.title}}</h1> <br>
+<p>{{onepost.body}}</p> <br>
+<p>{{onepost.created_at}}</p> <br>
+<p>{{onepost.updated_at}}</p> <br>
+
+
+<a href="{%url 'home'%}">홈</a>
+<a href="{%url 'edit' onepost.id %}">수정하기</a>
+<a href="{%url 'delete' onepost.id %}">삭제하기</a>
+{% endblock %}

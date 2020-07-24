@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br> <br> <br>
+{% for blog in blogs.all %}
+<a href="{% url 'detail' blog.id%}">{{blog.title}}</a><br>
+
+{{blog.created_at}}<br>
+{%endfor%}
+<br>
+<a href=" {%url 'new'%}">글쓰기</a>
+{% endblock %}

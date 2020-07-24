@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{%url 'update' onepost.id %}" method="POST">
+    {%csrf_token%}
+    <div>
+        <label for="title">제목 </label> <br>
+        <input type="text" name="title" id="title" value="{{onepost.title}}"> <br>
+
+    </div>
+    <div>
+        <label for="body">내용</label> <br>
+        <textarea name="body" id="body" cols="30" rows="30">{{onepost.body}}</textarea> <br>
+    </div>
+
+    <button type="submit"> 수정하기 </button>
+</form>
+{% endblock %}
